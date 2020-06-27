@@ -13,6 +13,10 @@ const routes: Routes = [
   {
     path: 'tab-churrascos',
     loadChildren: () => import('./tab-churrascos/tab-churrascos.module').then( m => m.TabChurrascosPageModule)
+  },
+  {
+    path: 'tab-churrasco-detalhe',
+    loadChildren: () => import('./tab-churrasco-detalhe/tab-churrasco-detalhe.module').then( m => m.TabChurrascoDetalhePageModule)
   }
 ];
 @NgModule({
