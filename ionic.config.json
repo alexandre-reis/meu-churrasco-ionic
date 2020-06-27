@@ -1,0 +1,8 @@
+{
+  "name": "meu-churrasco",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular",
+  "id": "fc8c12ca"
+}
