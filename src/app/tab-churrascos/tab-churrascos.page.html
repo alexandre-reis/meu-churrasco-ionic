@@ -5,60 +5,22 @@
 </ion-header>
 
 <ion-content>
-
-	<ion-card>
+	<ion-card *ngFor="let churrasco of listChurrascos" >
 		<ion-item>
          <div class="date-wrapper">
             <div class="date-container">
-               <span>5</span>
-               <span>Dez</span>
+               <span>{{churrasco.data | date:'dd'}}</span>
+               <span>{{churrasco.data | date:'LLL'}}</span>
             </div>
          </div> 
 			<ion-label class="ion-text-wrap">
-            <h3>Churrasco na casa do Carlos</h3>
-            <p>Participantes</p>
-            <p>Data</p>
-            <p>Valor total</p>
+            <h3>{{churrasco.descricao}}</h3>            
+            <p>Valor total: {{churrasco.valor_total | currency: 'R$ '}}</p>
+            <p>Participantes: {{churrasco.quantidade_pessoas}}</p>
          </ion-label>                    
          <ion-icon name="refresh-circle" size="large"></ion-icon>         
 		</ion-item>
-   </ion-card>
-
-   <ion-card>
-		<ion-item>
-         <div class="date-wrapper">
-            <div class="date-container">
-               <span>20</span>
-               <span>Nov</span>
-            </div>
-         </div> 
-			<ion-label class="ion-text-wrap">
-            <h3>Churrasco na casa do Carlos</h3>
-            <p>Participantes</p>
-            <p>Data</p>
-            <p>Valor total</p>
-         </ion-label>                    
-         <ion-icon name="refresh-circle" size="large"></ion-icon>         
-		</ion-item>
-   </ion-card>
-
-   <ion-card>
-		<ion-item>
-         <div class="date-wrapper">
-            <div class="date-container">
-               <span>5</span>
-               <span>Out</span>
-            </div>
-         </div> 
-			<ion-label class="ion-text-wrap">
-            <h3>Churrasco na casa do Carlos</h3>
-            <p>Participantes</p>
-            <p>Data</p>
-            <p>Valor total</p>
-         </ion-label>                    
-         <ion-icon name="refresh-circle" size="large"></ion-icon>         
-		</ion-item>
-   </ion-card>
+   </ion-card> 
 
 	<ion-fab vertical="bottom" horizontal="end" slot="fixed">
 		<ion-fab-button>
