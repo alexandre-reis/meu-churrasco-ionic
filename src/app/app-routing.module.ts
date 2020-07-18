@@ -17,6 +17,10 @@ const routes: Routes = [
   {
     path: 'tab-churrasco-detalhe',
     loadChildren: () => import('./tab-churrasco-detalhe/tab-churrasco-detalhe.module').then( m => m.TabChurrascoDetalhePageModule)
+  },
+  {
+    path: 'tab-churrasco-cadastro',
+    loadChildren: () => import('./tab-churrasco-cadastro/tab-churrasco-cadastro.module').then( m => m.TabChurrascoCadastroPageModule)
   }
 ];
 @NgModule({

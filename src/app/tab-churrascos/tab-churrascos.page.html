@@ -5,7 +5,7 @@
 </ion-header>
 
 <ion-content>
-	<ion-card *ngFor="let churrasco of listChurrascos" >
+	<ion-card *ngFor="let churrasco of listChurrascos" (click)="detalhe(churrasco.uid)">
 		<ion-item>
          <div class="date-wrapper">
             <div class="date-container">
@@ -23,7 +23,7 @@
    </ion-card> 
 
 	<ion-fab vertical="bottom" horizontal="end" slot="fixed">
-		<ion-fab-button>
+		<ion-fab-button (click)="organizar()">
 			<ion-icon name="add"></ion-icon>
 		</ion-fab-button>
 	</ion-fab>

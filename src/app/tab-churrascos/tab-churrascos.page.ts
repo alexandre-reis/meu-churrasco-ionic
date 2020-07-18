@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 import { Churrasco } from '../models/churrasco';
+import { Router } from '@angular/router';
 
 @Component({
    selector: 'app-tab-churrascos',
@@ -11,7 +12,10 @@ export class TabChurrascosPage implements OnInit {
 
    listChurrascos: any;
 
-   constructor(public apiService: ApiService) {
+   constructor(
+      public apiService: ApiService,
+      private router: Router,
+   ) {
       this.listChurrascos = [];
    }
 
@@ -27,5 +31,15 @@ export class TabChurrascosPage implements OnInit {
          this.listChurrascos = response;
       });
    }
+
+   organizar(){
+      this.router.navigate(['/tabs/tabCadastro']);
+   }
+
+   detalhe(id){
+      console.log(id)
+      this.router.navigate(['/tabs/tabDetalhe']);
+   }
+
 
 }
