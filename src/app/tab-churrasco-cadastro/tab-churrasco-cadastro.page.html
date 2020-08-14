@@ -1,9 +1,78 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>tab-churrasco-cadastro</ion-title>
-  </ion-toolbar>
+	<ion-toolbar class="ion-text-center" color="primary">
+		<ion-title>Novo Churrasco</ion-title>
+	</ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <ion-item>
+    <ion-label>
+      Total de Pessoas
+    </ion-label>
+    <ion-input value="this.churrasco.quantidade_pessoas"></ion-input>
+    <ion-icon name="people-outline"></ion-icon>
+  </ion-item>
 
+  <ion-item>
+
+  </ion-item>
+
+  <ion-item>
+    <ion-label>
+      Carnes
+    </ion-label>
+    <ion-icon name="bonfire-outline" style="margin-top: 10px;"></ion-icon>
+  </ion-item>
+  <ion-list>
+    <ion-item>
+      <ion-label>Bovina</ion-label>
+      <ion-checkbox slot="end" value="this.churrasco.carneBovina"></ion-checkbox>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label>Suina</ion-label>
+      <ion-checkbox slot="end" value="this.churrasco.carneSuina" ></ion-checkbox>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label>Frango</ion-label>
+      <ion-checkbox slot="end" value="this.churrasco.carneFrango"></ion-checkbox>
+    </ion-item>
+  </ion-list>
+
+  <ion-item>
+
+  </ion-item>
+  <ion-item>
+    <ion-label>
+      Acompanhamentos
+    </ion-label>
+    <ion-icon name="color-filter-outline" style="margin-top: 10px;"></ion-icon>
+  </ion-item>
+  <ion-list>
+    <ion-item>
+      <ion-label>Salada Verde</ion-label>
+      <ion-checkbox slot="end" value="this.churrasco.saladaVerde"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Arroz</ion-label>
+      <ion-checkbox slot="end" value="this.churrasco.arroz"></ion-checkbox>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label>Salada de Maionese</ion-label>
+      <ion-checkbox slot="end" value="this.churrasco.maionese"></ion-checkbox>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Pão</ion-label>
+      <ion-checkbox slot="end" value="this.churrasco.pao"></ion-checkbox>
+    </ion-item>
+
+    <section>
+      <ion-button size="small" color="success" onclick="this.calculaQuantidade(this.churrasco)">Salvar Churrasco</ion-button>
+      <ion-button size="small" color="medium">Limpar Dados</ion-button>
+    </section>
+  </ion-list>
 </ion-content>
