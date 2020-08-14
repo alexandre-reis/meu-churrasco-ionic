@@ -4,14 +4,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
+import { AlertController, ToastController } from '@ionic/angular';
 
 @Injectable({
    providedIn: 'root'
 })
 export class ApiService {
 
-   base_path = 'http://localhost:3333/churrascos';
-   path_churrasco = 'http://localhost:3333/churrascoNovo';
+   base_path = 'http://localhost:3333/';
 
    constructor(private http: HttpClient) { }
 
@@ -32,14 +32,14 @@ export class ApiService {
       return throwError('Something bad happened; please try again later.');
    };
 
-   save(); Observable<ChurrascoNovo> {
-      return this.http
-               .post<ChurrascoNovo>(this.path_churrasco)
-               .pipe(
-                  retry(2),
-                  catchError(this.handleError)
-               );
-   }
+   save(churrasco: ChurrascoNovo) {
+		this.http.post(`${this.base_path}`, churrasco)
+			.subscribe(data => {
+
+			}, error => {
+				console.log(error);
+			});
+	}
 
    getList(): Observable<Churrasco> {
       return this.http
