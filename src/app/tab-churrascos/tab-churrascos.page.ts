@@ -32,11 +32,11 @@ export class TabChurrascosPage implements OnInit {
       });
    }
 
-   organizar(){
+   organizar() {
       this.router.navigate(['/tabs/tabCadastro']);
    }
 
-   detalhe(id){
+   detalhe(id) {
       console.log(id)
       this.router.navigate(['/tabs/tabDetalhe']);
    }

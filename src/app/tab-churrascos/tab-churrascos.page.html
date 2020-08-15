@@ -1,31 +1,31 @@
 <ion-header>
-	<ion-toolbar class="ion-text-center" color="primary">
-		<ion-title>Churrascos</ion-title>
-	</ion-toolbar>
+   <ion-toolbar class="ion-text-center" color="primary">
+      <ion-title>Churrascos</ion-title>
+   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-	<ion-card *ngFor="let churrasco of listChurrascos" (click)="detalhe(churrasco.uid)">
-		<ion-item>
+   <ion-card *ngFor="let churrasco of listChurrascos">
+      <ion-item>
          <div class="date-wrapper">
             <div class="date-container">
                <span>{{churrasco.data | date:'dd'}}</span>
                <span>{{churrasco.data | date:'LLL'}}</span>
             </div>
-         </div> 
-			<ion-label class="ion-text-wrap">
-            <h3>{{churrasco.descricao}}</h3>            
+         </div>
+         <ion-label class="ion-text-wrap">
+            <h3>{{churrasco.descricao}}</h3>
             <p>Valor total: {{churrasco.valor_total | currency: 'R$ '}}</p>
             <p>Participantes: {{churrasco.quantidade_pessoas}}</p>
-         </ion-label>                    
-         <ion-icon name="refresh-circle" size="large"></ion-icon>         
-		</ion-item>
-   </ion-card> 
+            <p>Quantidade carne: {{churrasco.quantidade_carne | number}} Kg</p>
+         </ion-label>
+      </ion-item>
+   </ion-card>
 
-	<ion-fab vertical="bottom" horizontal="end" slot="fixed">
-		<ion-fab-button (click)="organizar()">
-			<ion-icon name="add"></ion-icon>
-		</ion-fab-button>
-	</ion-fab>
+   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button (click)="organizar()">
+         <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+   </ion-fab>
 
 </ion-content>
